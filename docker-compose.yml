@@ -1,0 +1,14 @@
+version: '2'
+services:
+  cherrypy:
+    image: cherry:latest
+    ports:
+     - "5000:5000"
+    links:
+     - postgresDB
+    depends_on:
+     - postgresDB
+  postgresDB:
+    image: postgresql:latest
+    ports:
+     - "5432:5432"
